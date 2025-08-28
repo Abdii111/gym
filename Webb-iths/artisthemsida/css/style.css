@@ -1,0 +1,138 @@
+/* Allmänna stilar för hela sidan */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+  margin: 20px;
+  background-image: url('../img/bakgrund.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-color: #333;
+}
+
+/* Rubriker */
+h1 {
+  font-family: 'Oswald', sans-serif;
+  color: #2a4d69;
+}
+
+h2 {
+    font-family: 'Oswald', sans-serif;
+    color: #f37736;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Stilar för navigering */
+nav {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 1.2em;
+}
+
+nav a {
+  color: #f37736;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Stilar för bilder */
+.artistbild {
+  border-radius: 10px;
+  max-width: 300px;
+  height: auto;
+}
+
+.albumomslag {
+  border: 5px solid #2a4d69;
+  border-radius: 5px;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Stilar för tabeller (om de används någonstans) */
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+th, td {
+  border: 1px solid #333;
+  padding: 8px;
+  text-align: left;
+}
+
+th {
+  background-color: #4b86b4;
+  color: white;
+}
+
+/* Stilar för formulär */
+form input[type="text"],
+form input[type="number"],
+form input[type="email"],
+form input[type="password"] {
+  padding: 5px;
+  width: 250px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+form input[type="submit"] {
+  background-color: #4b86b4;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #2a4d69;
+}
+
+/* --- Flexbox-stilar för startsidan (Diskografi) --- */
+/* Behållaren för alla skivkort */
+#albums {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Stilar för varje enskilt skivkort */
+.album-card {
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease;
+  flex: 0 1 auto;
+}
+
+.album-card:hover {
+  transform: translateY(-5px);
+}
+
+.album-card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.album-card h3 {
+  margin-top: 10px;
+}
