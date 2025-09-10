@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mitt gymschema</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <h1>Välkommen till ditt gymschema!</h1>
+
+        <div v-if="!loggedIn">
+            <form @submit.prevent="logIn">
+                <label for="userName">Skriv in ditt namn:</label>
+                <input type="text" id="userName" v-model="userName" placeholder="Ditt namn">
+                <button type="submit">Fortsätt</button>
+            </form>
+        </div>
+
+        <div v-if="loggedIn">
+            <h2>Gymschema för {{ userName }}</h2>
+            
+            <form @submit.prevent="addExercise">
+                <input type="text" v-model="newExercise.text" placeholder="Lägg till nytt pass...">
+                <button type="submit">Lägg till</button>
+            </form>
+
+            <ul>
+                <li v-for="(exercise, index) in exercises">
+                    {{ exercise.text }}
+                    <button @click="removeExercise(index)">Ta bort</button>
+                </li>
+            </ul>
+
+            <button @click="logOut">Logga ut</button>
+        </div>
+    </div>
+    
+    <script src="js/app.js"></script>
+</body>
+</html>
